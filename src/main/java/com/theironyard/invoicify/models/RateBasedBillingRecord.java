@@ -37,5 +37,7 @@ public class RateBasedBillingRecord extends BillingRecord {
 	public void setQuantity(double quantity) {
 		this.quantity = quantity;
 	}
+	
+	
 
 }
