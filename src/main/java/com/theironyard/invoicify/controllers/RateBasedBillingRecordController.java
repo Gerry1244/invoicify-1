@@ -14,7 +14,7 @@ import com.theironyard.invoicify.repositories.BillingRecordRepository;
 import com.theironyard.invoicify.repositories.CompanyRepository;
 
 @Controller
-@RequestMapping("/billing-records/rate-baseds")
+@RequestMapping("/billing-records/rate-based")
 public class RateBasedBillingRecordController {
 
 	private BillingRecordRepository recordRepository;

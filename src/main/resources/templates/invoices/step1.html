@@ -14,19 +14,15 @@
 	<form action="/invoices/new" method="post">
 
 		<select name="clientId" required>
-			<option value="">Choose a client</option>
-			{{#companies}}
-				<option value="{{ id }}">{{ name }}</option>
-			{{/companies}}
+			<option value="">Choose a client</option> {{#companies}}
+			<option value="{{ id }}">{{ name }}</option> {{/companies}}
 		</select> <br>
 		<button>Choose Some billing records ...</button>
 		<input type="hidden" name="{{ _csrf.parameterName }}"
 			value="{{ _csrf.token }}">
 	</form>
 
-	<h1>
-		Select Client
-		<h1>
-			<script src="js/app.js"></script>
+
+	<script src="js/app.js"></script>
 </body>
 </html>
