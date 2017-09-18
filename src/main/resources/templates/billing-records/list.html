@@ -5,6 +5,7 @@
 <title>Billing Records</title>
 </head>
 <body>
+{{> common/_navigation }}
 
 <h1>Billing Records</h1>
 
@@ -19,7 +20,7 @@
 	</select>
 	<input type="text" name="description" required placeholder="describe it">
 	<input type="hidden" name="{{ _csrf.parameterName }}" value="{{ _csrf.token }}">
-	<button>Create Me</button>
+	<button>Create Flat-Fee Billing Record</button>
 	
 </form>
 
@@ -35,7 +36,7 @@
 	</select>
 	<input type="text" name="description" required placeholder="describe it">
 	<input type="hidden" name="{{ _csrf.parameterName }}" value="{{ _csrf.token }}">
-	<button>Create Me</button>
+	<button>Create Rate-Based Billing Record</button>
 	
 </form>
 

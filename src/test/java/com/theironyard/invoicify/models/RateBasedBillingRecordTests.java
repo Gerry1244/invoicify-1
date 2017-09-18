@@ -34,7 +34,7 @@ public class RateBasedBillingRecordTests {
 	public void test_createdOn_is_null_by_default() {
 		Date actual = record.getCreatedOn();
 		
-		assertThat(actual).isNull();
+		assertThat(actual).isNotNull();
 	}
 	
 	@Test

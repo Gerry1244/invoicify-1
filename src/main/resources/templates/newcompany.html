@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Companies</title>
+</head>
+<body>
+
+<form method="post" action="/admin/companies">
+	<input type="text" name="invoiceNumber" required>
+	
+	<button>Company</button>
+	<input type="hidden" name="{{ _csrf.parameterName }}"   value="{{ _csrf.token }}">
+	<input type="hidden" name="clientId" value="{{ clientId }}">
+	
+	
+	
+	</form>
+
+
+</body>
+</html>

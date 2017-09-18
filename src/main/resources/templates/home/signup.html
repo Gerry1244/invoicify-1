@@ -4,21 +4,27 @@
 <meta charset="UTF-8">
 <title>Welcome to the Jungle</title>
 </head>
+
+<link rel="stylesheet" type="text/css" href="css/app.css">
+
 <body>
+	{{>common/_navigation }}
+	<h1>Invoicify</h1>
 
-{{#errorMessage}}
-  <div>{{ errorMessage }}</div>
-{{/errorMessage}}
+	<br> {{#errorMessage}}
+	<div>{{ errorMessage }}</div>
+	{{/errorMessage}}
 
-<form method="post" action="/signup">
-  <input type="text" name="username" required>
-  <br>
-  <input type="password" name="password" required>
-  <br>
-  <input type="hidden" name="{{ _csrf.parameterName }}" value="{{ _csrf.token }}">
-  <br>
-  <button>Sign up!</button>
-</form>
+	<form method="post" action="/signup">
+		<input type="text" name="username" required> <br> <input
+			type="password" name="password" required> <br> <input
+			type="hidden" name="{{ _csrf.parameterName }}"
+			value="{{ _csrf.token }}"> <br>
+		<button>Sign In</button>
+	</form>
+
+	{{>common/_navigation }}
+	<script src="/js/app.js"></script>
 
 </body>
 </html>

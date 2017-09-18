@@ -3,26 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <title>Select Client</title>
-
-<form action="/invoices/new" method ="post">
-
-    <select name="clientId" required>    
-        <option value="">Choose a client</option>    
-         {{#companies}}
-             <option value="{{ id }}">{{ name }}</option>
-         {{/companies}}
-    </select>
-    
-    <br>
-    <button>Choose Some billing records ...</button>
-    <input type="hidden"  name="{{ _csrf.parameterName }}"   value="{{ _csrf.token }}">
-</form>    
+<link rel="stylesheet" type="text/css" href="css/app.css">
 
 </head>
 <body>
 
-<h1>Select Client<h1>
+	{{>common/_navigation}}
+	<h1>Select Client</h1>
 
+	<form action="/invoices/new" method="post">
 
+		<select name="clientId" required>
+			<option value="">Choose a client</option>
+			{{#companies}}
+				<option value="{{ id }}">{{ name }}</option>
+			{{/companies}}
+		</select> <br>
+		<button>Choose Some billing records ...</button>
+		<input type="hidden" name="{{ _csrf.parameterName }}"
+			value="{{ _csrf.token }}">
+	</form>
+
+	<h1>
+		Select Client
+		<h1>
+			<script src="js/app.js"></script>
 </body>
 </html>

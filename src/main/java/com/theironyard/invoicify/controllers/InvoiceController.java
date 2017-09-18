@@ -54,21 +54,21 @@ public class InvoiceController {
 
 		}
 		invoice.setLineItems(items);
-		invoice.setCompany(companyRepository.findOne(clientId));
 		invoice.setCreatedOn(now);
 		invoice.setCreatedBy(creator);
-		
+		invoice.setCompany(companyRepository.findOne(clientId));
 		invoiceRepository.save(invoice);
 
 		return "redirect:/invoices";
 
 	}
-
+// One to look at
 	@PostMapping("new")
 	public ModelAndView step2(long clientId) {
 		ModelAndView mv = new ModelAndView("invoices/step2");
 		mv.addObject("clientId", clientId);
 		mv.addObject("records", recordRepository.findByClientId(clientId));
+		mv.addObject("records", recordRepository.findByClientIdAndLineItemIsNull(clientId));
 		return mv;
 	}
 
@@ -85,8 +85,10 @@ public class InvoiceController {
 		User user = (User) auth.getPrincipal();
 		ModelAndView mv = new ModelAndView("invoices/list");
 		mv.addObject("user", user);
+		mv.addObject("invoices", invoiceRepository.findAll());
 		return mv;
 
 	}
 
 }
+           

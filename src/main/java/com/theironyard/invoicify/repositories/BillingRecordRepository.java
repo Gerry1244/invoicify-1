@@ -3,6 +3,7 @@ package com.theironyard.invoicify.repositories;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
 import com.theironyard.invoicify.models.BillingRecord;
 
@@ -11,4 +12,8 @@ public interface BillingRecordRepository extends JpaRepository<BillingRecord, Lo
 	List<BillingRecord> findByClientId(long clientId);
 	
 	List<BillingRecord> findByIdIn(long[] recordIds);
+	
+	List<BillingRecord> findByClientIdAndLineItemIsNull(long clientId);
+	
+	
 }

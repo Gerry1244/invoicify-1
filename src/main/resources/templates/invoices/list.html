@@ -3,9 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <title>Invoices</title>
+
+<link rel="stylesheet" type="text/css" href="css/app.css">
 </head>
 <body>
+
+{{> common/_navigation }}
+
 <a href="/invoices/new"> New Invoice</a>
+
+<h1>Invoices</h1>
+<br>
+{{#displayTable}}
 
 <table>
 	  <thead>
@@ -28,9 +37,9 @@
 	  </tbody>  
 	</table>
 	
+	{{/displayTable}}
+	
 	<input type="hidden"  name="{{ _csrf.parameterName }}"   value="{{ _csrf.token }}">
 
-
-<h1>Invoices</h1>
 </body>
 </html>

@@ -19,6 +19,8 @@ public class Company {
 	@Column(length=255)
 	private String name;
 	
+	private int count;
+	
 	@OneToMany(mappedBy="company")
 	private List<Invoice> invoices;
 	
@@ -50,6 +52,14 @@ public class Company {
 
 	public void setInvoices(List<Invoice> invoices) {
 		this.invoices = invoices;
+	}
+
+	public int getCount() {
+		return count;
+	}
+
+	public void setCount(int count) {
+		this.count = count;
 	}
 	
 }

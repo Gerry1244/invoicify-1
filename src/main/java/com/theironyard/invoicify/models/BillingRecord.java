@@ -87,5 +87,9 @@ public abstract class BillingRecord {
 	public void setClient(Company client) {
 		this.client = client;
 	}
+
+	public User getCreatedBy() {
+		return createdBy;
+	}
 	
 }
