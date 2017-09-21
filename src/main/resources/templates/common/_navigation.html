@@ -12,12 +12,13 @@
 	  {{/isAccountant}}
 	  
 	  {{#isClerk}}
-	    <a href="/billing-records">Invoices</a>
+	    <a href="/invoices">Invoices</a>
 	  {{/isClerk}}
 	  
 	  {{#isAdmin}}
 	    <a href="/billing-records">Billing Records</a>
-	    <a href="/billing-records">Invoices</a>
+	    <a href="/invoices">Invoices</a>
+	    <a href="/admin/companies">companies</a>
 	  {{/isAdmin}}
   {{/user}}
   {{#notUser}}
